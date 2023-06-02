@@ -1,8 +1,9 @@
 import streamlit as st
-import joblib
-
+import pickle
 # Load the pre-trained model
-model = joblib.load("model.joblib")
+
+with open('model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 # Set up the Streamlit app
 st.title("Social Ads Purchase Prediction")
